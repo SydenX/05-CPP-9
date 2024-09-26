@@ -2,11 +2,13 @@
 # define EXCHANGE
 
 #include <iostream>
-#include <vector>
+#include <iomanip>
+#include <fstream>
+#include <map>
 
 class BitcoinExchange {
 	private:
-		std::vector db;
+		std::map<std::string, double> _db;
 	public:
 		BitcoinExchange();
 		BitcoinExchange(BitcoinExchange const &ref);
@@ -14,6 +16,6 @@ class BitcoinExchange {
 		~BitcoinExchange();
 
 
-}
+};
 
 #endif

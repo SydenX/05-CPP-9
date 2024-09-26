@@ -6,7 +6,7 @@
 #    By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 23:04:50 by lolemmen          #+#    #+#              #
-#    Updated: 2024/09/26 15:00:23 by jtollena         ###   ########.fr        #
+#    Updated: 2024/09/26 16:23:41 by jtollena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ CXX = c++
 CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -Wno-shadow
 
 SOURCES := \
+	 BitcoinExchange.cpp \
 	 main.cpp
 	 
 # **************************************************************************** #

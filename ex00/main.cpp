@@ -1,4 +1,5 @@
 #include <iostream>
+#include "BitcoinExchange.hpp"
 
 bool isFileReadable (const std::string& name) {
 	if (FILE *file = fopen(name.c_str(), "r")) {
@@ -17,5 +18,6 @@ int main(int argc, char **argv){
 	}
 	if (!isFileReadable(argv[1]))
 		return 1;
+	BitcoinExchange();
 	return 0;
 }
