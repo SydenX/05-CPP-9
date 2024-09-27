@@ -9,13 +9,12 @@
 class BitcoinExchange {
 	private:
 		std::map<std::string, double> _db;
-	public:
 		BitcoinExchange();
-		BitcoinExchange(BitcoinExchange const &ref);
-		BitcoinExchange &operator=(BitcoinExchange const &ref);
+		void initDatabase();
+		void compareValues(const std::string& name);
+	public:
+		BitcoinExchange(std::string infile);
 		~BitcoinExchange();
-
-
 };
 
 #endif
