@@ -62,10 +62,8 @@ void BitcoinExchange::compareValues(const std::string& name){
 							std::cerr << "Error: " << date << " do not have lower or equal date." << std::endl;
 						else
 							std::cout << date << " => " << value << " = " << value * it->second << std::endl;
-					} else if(value < 0)
-						std::cerr << "Error: not a positive number." << std::endl;
-					else 
-						std::cerr << "Error: too large number." << std::endl;
+					} else if(value < 0) std::cerr << "Error: not a positive number." << std::endl;
+					else std::cerr << "Error: too large number." << std::endl;
 				} catch(std::exception &e){
 					std::cerr << "Error: bad input => " << line << std::endl;
 				}
