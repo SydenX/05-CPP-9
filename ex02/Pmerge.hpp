@@ -50,10 +50,6 @@ class Pmerge {
 			return largest;
 		}
 
-	public:
-		Pmerge(int argc, char **argv);
-		~Pmerge();
-
 		template < typename T >
 		void printList(T& v){
 			typename T::const_iterator it;
@@ -81,6 +77,10 @@ class Pmerge {
 
 			return mergeSort(sortedLeft, sortedRight);
 		}
+		
+	public:
+		Pmerge(int argc, char **argv);
+		~Pmerge();
 };
 
 #endif

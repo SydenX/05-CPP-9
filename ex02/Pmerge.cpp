@@ -13,6 +13,9 @@ Pmerge::Pmerge(int argc, char **argv){
 	for (int i = 1; i < argc; i++){
 		if (!isInt(argv[i])){
 			std::cerr << argv[i] << " is not a valid integer." << std::endl;
+			this->_v.clear();
+			this->_d.clear();
+			beforeList.clear();
 			exit(1);
 		}
 		try {
@@ -24,6 +27,7 @@ Pmerge::Pmerge(int argc, char **argv){
 			std::cout << e.what() << " for " << argv[i] << std::endl;
 			this->_v.clear();
 			this->_d.clear();
+			beforeList.clear();
 			exit(1);
 		}
 	}
@@ -43,6 +47,9 @@ Pmerge::Pmerge(int argc, char **argv){
 
 	std::cout << "Time to process a range of " << this->_v.size() << " elements with std::vector : " << vectorTime << "us" << std::endl;
 	std::cout << "Time to process a range of " << this->_d.size() << " elements with std::deque : " << dequeTime << "us" << std::endl;;
+	beforeList.clear();
+	this->_v.clear();
+	this->_d.clear();
 }
 
 Pmerge::~Pmerge(){}

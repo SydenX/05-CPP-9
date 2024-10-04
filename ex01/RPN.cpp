@@ -45,6 +45,7 @@ RPN::RPN(int argc, char **argv){
 					case 47:
 						if (second == 0){
 							std::cerr << "\'" << first << " / " << second << "\' division by 0 is not possible." << std::endl;
+							this->_list.clear();
 							exit(1);
 						}
 						result = first / second;
@@ -53,17 +54,18 @@ RPN::RPN(int argc, char **argv){
 				this->_list.push_back(result);
 			} else {
 				std::cerr << "\'" << toRead << "\' is not correctly formatted." << std::endl;
+				this->_list.clear();
 				exit(1);
 			}
 		}
 	}
 	if (this->_list.size() > 1){
 		std::cerr << "\'" << toRead << "\' is not correctly formatted." << std::endl;
+		this->_list.clear();
 		exit(1);
 	}
 	std::cout << this->_list.front() << std::endl;
-}
-
-RPN::~RPN(){
 	this->_list.clear();
 }
+
+RPN::~RPN(){}
