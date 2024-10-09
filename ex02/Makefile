@@ -6,7 +6,7 @@
 #    By: jtollena <jtollena@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/02 23:04:50 by lolemmen          #+#    #+#              #
-#    Updated: 2024/10/01 11:37:28 by jtollena         ###   ########.fr        #
+#    Updated: 2024/10/09 12:23:50 by jtollena         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ CXXFLAGS = -std=c++98 -Wall -Werror -Wextra -Wno-shadow
 SOURCES := \
 	 Pmerge.cpp \
 	 main.cpp
-	 
+
 # **************************************************************************** #
 
 # Special Chars

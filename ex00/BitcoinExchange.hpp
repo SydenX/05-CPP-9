@@ -12,6 +12,8 @@ class BitcoinExchange {
 		BitcoinExchange();
 		void initDatabase();
 		void compareValues(const std::string& name);
+		BitcoinExchange &operator=(const BitcoinExchange &ref);
+		BitcoinExchange(const BitcoinExchange &ref);
 	public:
 		BitcoinExchange(std::string infile);
 		~BitcoinExchange();

@@ -13,6 +13,8 @@ class Pmerge {
 		std::vector<int> _v;
 		std::deque<int> _d;
 		Pmerge();
+		Pmerge(const Pmerge &ref);
+		Pmerge &operator=(const Pmerge &ref);
 		
 		int isInt(std::string const &s);
 
