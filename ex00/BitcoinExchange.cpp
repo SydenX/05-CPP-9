@@ -1,5 +1,13 @@
 #include "BitcoinExchange.hpp"
 
+double strToDouble(std::string str){
+	std::stringstream ss;
+	ss<<str;
+	double value;
+	ss>>value;
+	return value;
+}
+
 void BitcoinExchange::initDatabase(){
 	std::ifstream file;
     file.open("data.csv", std::ios::in);
@@ -12,8 +20,7 @@ void BitcoinExchange::initDatabase(){
 	getline(file, line);
 	while(getline(file, line)){
 		std::string date = (line.substr(0, line.find(",")));
-		double value = stod(line.substr(line.find(",") + 1, line.size()));
-		this->_db[date] = value;
+		this->_db[date] = strToDouble(line.substr(line.find(",") + 1, line.size()));
 	}
 	file.close();
 }
@@ -28,16 +35,16 @@ int checkDate(std::string date){
 		if ((i == 4 || i == 7) && date[i] != '-')
 			return 0;
 	}
-	if (stod(date.substr(date.find("-")+1, date.find("-", 2))) > 12)
+	if (strToDouble(date.substr(date.find("-")+1, date.find("-", 2))) > 12)
 		return 0;
-	if (stod(date.substr(date.find("-", date.find("-") + 1) + 1, date.size())) > 31)
+	if (strToDouble(date.substr(date.find("-", date.find("-") + 1) + 1, date.size())) > 31)
 		return 0;
 	return 1;
 }
 
 void BitcoinExchange::compareValues(const std::string& name){
 	std::ifstream file;
-    file.open(name, std::ios::in);
+    file.open(name.c_str(), std::ios::in);
 	if (!file.is_open()){
 		std::cerr << "File \"" << name << "\" cannot be read." << std::endl;
 		exit(1);
@@ -53,7 +60,7 @@ void BitcoinExchange::compareValues(const std::string& name){
 				std::cerr << "Error: bad input => " << line << std::endl;
 			else {
 				try {
-					double value = stod(line.substr(line.find(" | ") + 3, line.size()));
+					double value = strToDouble(line.substr(line.find(" | ") + 3, line.size()));
 					if (value >= 0 && value <= 1000){
 						std::map<std::string, double>::iterator it = this->_db.lower_bound(date);
 						if (it != this->_db.begin() && it->first != date)

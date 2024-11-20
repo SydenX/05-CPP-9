@@ -1,10 +1,13 @@
 #ifndef EXCHANGE
 # define EXCHANGE
 
+#include <cstdlib>
 #include <iostream>
 #include <iomanip>
 #include <fstream>
 #include <map>
+#include <string>
+#include <sstream>
 
 class BitcoinExchange {
 	private:

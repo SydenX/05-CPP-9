@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <list>
+#include <cstdlib>
 
 class RPN {
 	private:

@@ -1,5 +1,12 @@
 #include "Pmerge.hpp"
 
+int stringToInt(std::string & str) {
+    int i;
+    std::istringstream(str) >> i;
+    return i;
+}
+
+
 int Pmerge::isInt(std::string const &s){
 	for (unsigned int i = 0; i < s.length(); i++){
 		if (std::isdigit(s[i]) == false)
@@ -19,7 +26,8 @@ Pmerge::Pmerge(int argc, char **argv){
 			exit(1);
 		}
 		try {
-			int num = std::stoi(argv[i], 0, 10);
+			std::string s = argv[i];
+			int num = stringToInt(s);
 			this->_v.push_back(num);
 			this->_d.push_back(num);
 			beforeList.push_back(num);

@@ -7,6 +7,9 @@
 #include <vector>
 #include <deque>
 #include <ctime>
+#include <cstdlib>
+#include <string>
+#include <sstream>
 
 class Pmerge {
 	private:
