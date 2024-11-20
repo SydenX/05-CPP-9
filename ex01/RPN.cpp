@@ -4,10 +4,10 @@ int RPN::isIntOrParam(std::string const &s){
 	for (unsigned int i = 0; i < s.length(); i++){
 		if (s[i] != ' '){
 			if (std::isdigit(s[i]) == false && (s[i] != '+' && s[i] != '-' && s[i] != '/' && s[i] != '*'))
-				return (std::cerr << "\'" << s[i] << "\' is not a valid integer or parameter." << std::endl, 0);
+				return (std::cerr << "Error" << std::endl, 0);
 			if (++i < s.length())
 				if (s[i] != ' ')
-					return (std::cerr << "\'" << s << "\' is not correctly formatted." << std::endl, 0);
+					return (std::cerr << "Error" << std::endl, 0);
 		}
 	}
 	return 1;
@@ -57,14 +57,14 @@ RPN::RPN(int argc, char **argv){
 			} else if (this->_list.size() >= 2)
 				calculate(i, toRead);
 			else {
-				std::cerr << "\'" << toRead << "\' is not correctly formatted." << std::endl;
+				std::cerr << "Error" << std::endl;
 				this->_list.clear();
 				exit(1);
 			}
 		}
 	}
 	if (this->_list.size() > 1){
-		std::cerr << "\'" << toRead << "\' is not correctly formatted." << std::endl;
+		std::cerr << "Error" << std::endl;
 		this->_list.clear();
 		exit(1);
 	}

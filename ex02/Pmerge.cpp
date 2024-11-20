@@ -19,7 +19,7 @@ Pmerge::Pmerge(int argc, char **argv){
 	std::vector<int> beforeList;
 	for (int i = 1; i < argc; i++){
 		if (!isInt(argv[i])){
-			std::cerr << argv[i] << " is not a valid integer." << std::endl;
+			std::cerr << "Error" << std::endl;
 			this->_v.clear();
 			this->_d.clear();
 			beforeList.clear();
